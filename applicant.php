@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 include_once 'connection.php';
 
-// Read POST form-data
+
 $id            = isset($_POST['id']) ? intval($_POST['id']) : 0;
 $owner_id      = isset($_POST['owner_id']) ? intval($_POST['owner_id']) : 0;
 $status        = isset($_POST['status']) ? trim($_POST['status']) : '';

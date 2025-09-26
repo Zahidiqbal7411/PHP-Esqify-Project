@@ -9,7 +9,7 @@ $status        = isset($_POST['status']) ? trim($_POST['status']) : '';
 $job_id        = isset($_POST['job_id']) ? intval($_POST['job_id']) : 0;
 $applicant_id  = isset($_POST['applicant_id']) ? intval($_POST['applicant_id']) : 0;
 
-// Base SQL query
+
 $sql = "
 SELECT 
     ja.id,

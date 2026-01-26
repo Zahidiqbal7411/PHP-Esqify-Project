@@ -1,0 +1,634 @@
+{
+	"info": {
+		"_postman_id": "esqify-mobile-api-2026",
+		"name": "Esqify Mobile API - Complete Collection",
+		"description": "Complete API collection for Esqify Mobile App. Includes all new APIs and fixed endpoints.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "NEW APIS",
+			"item": [
+				{
+					"name": "1. Get Bars List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/get_bars_list.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"get_bars_list.php"
+							]
+						},
+						"description": "Fetch list of bars for filter dropdown (Issue #1)"
+					},
+					"response": []
+				},
+				{
+					"name": "2. Get Cities List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state_id\": 5,\n    \"page\": 1,\n    \"per_page\": 50\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/get_cities_list.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"get_cities_list.php"
+							]
+						},
+						"description": "Fetch cities with optional state filter and pagination (Issue #2)"
+					},
+					"response": []
+				},
+				{
+					"name": "2b. Get All Cities (No Filter)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"per_page\": 100\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/get_cities_list.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"get_cities_list.php"
+							]
+						},
+						"description": "Fetch all cities without state filter"
+					},
+					"response": []
+				},
+				{
+					"name": "3. Get Positions List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/get_positions_list.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"get_positions_list.php"
+							]
+						},
+						"description": "Fetch job positions for dropdown (Issue #4)"
+					},
+					"response": []
+				},
+				{
+					"name": "4. Get Chat List",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 15\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/get_chat_list.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"get_chat_list.php"
+							]
+						},
+						"description": "Fetch all chats for a user with last message preview (Issue #5)"
+					},
+					"response": []
+				},
+				{
+					"name": "5. Get Messages",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat_id\": 42,\n    \"user_id\": 15,\n    \"page\": 1,\n    \"per_page\": 50\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/get_messages.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"get_messages.php"
+							]
+						},
+						"description": "Fetch all messages in a chat with pagination (Issue #5)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "FIXED APIS",
+			"item": [
+				{
+					"name": "6. FAQs List (FIXED)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/faqs_list.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"faqs_list.php"
+							]
+						},
+						"description": "Fetch FAQs - FIXED error 500 issue (Issue #6)"
+					},
+					"response": []
+				},
+				{
+					"name": "7. Deal Details (FIXED)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 1\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/details_deals.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"details_deals.php"
+							]
+						},
+						"description": "Get deal details - FIXED photo URLs (Issue #7)"
+					},
+					"response": []
+				},
+				{
+					"name": "8. Leaderboard (FIXED)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"page\": 1,\n    \"per_page\": 20\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/leaderboard.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"leaderboard.php"
+							]
+						},
+						"description": "Get leaderboard - FIXED error 500 (Issue #3)"
+					},
+					"response": []
+				},
+				{
+					"name": "8b. Leaderboard with Filters",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"state_for_search\": 5,\n    \"industries_for_search\": [1, 3, 5],\n    \"sort_data\": \"deal_volume\",\n    \"page\": 1,\n    \"per_page\": 20\n}"
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/leaderboard.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"leaderboard.php"
+							]
+						},
+						"description": "Leaderboard with multiple filters (state + industries + sort)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "UPDATED APIS",
+			"item": [
+				{
+					"name": "9. Job Create Form Data (UPDATED)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/job_create.php?user_id=15",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"job_create.php"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "15"
+								}
+							]
+						},
+						"description": "Get job form dropdown data - NOW INCLUDES positions (Issue #4)"
+					},
+					"response": []
+				},
+				{
+					"name": "10. Deal Create Form Data (UPDATED)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/deal_create.php?user_id=15",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"deal_create.php"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "15"
+								}
+							]
+						},
+						"description": "Get deal form dropdown data - NOW INCLUDES bars (Issue #1)"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "EXISTING APIS (Unchanged)",
+			"item": [
+				{
+					"name": "11. Send Message (Chat)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sender_id",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Hello, how are you?",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/new_chat.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"new_chat.php"
+							]
+						},
+						"description": "Send a text message (existing API, unchanged)"
+					},
+					"response": []
+				},
+				{
+					"name": "11b. Send Message with Image",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "sender_id",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "receiver_id",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "Check this image!",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/new_chat.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"new_chat.php"
+							]
+						},
+						"description": "Send message with image attachment"
+					},
+					"response": []
+				},
+				{
+					"name": "12. Post Deal",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "owner",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Test Deal",
+									"type": "text"
+								},
+								{
+									"key": "state",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "industry",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "practice_area",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "speciality",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "101",
+									"type": "text",
+									"description": "Now you can get from get_cities_list.php"
+								},
+								{
+									"key": "descriptions",
+									"value": "Deal description here",
+									"type": "text"
+								},
+								{
+									"key": "amount",
+									"value": "500000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/post_deals.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"post_deals.php"
+							]
+						},
+						"description": "Create a new deal (includes photo upload - Issue #8)"
+					},
+					"response": []
+				},
+				{
+					"name": "13. Post Job",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "process_type",
+									"value": "job_details",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "15",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "Associate Attorney Position",
+									"type": "text"
+								},
+								{
+									"key": "industry",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "speciality",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "practice_area",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "job_city",
+									"value": "101",
+									"type": "text",
+									"description": "City ID from get_cities_list.php"
+								},
+								{
+									"key": "job_state",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "position",
+									"value": "1",
+									"type": "text",
+									"description": "Position ID from get_positions_list.php"
+								},
+								{
+									"key": "description",
+									"value": "Job description here",
+									"type": "text"
+								},
+								{
+									"key": "firm",
+									"value": "Law Firm Name",
+									"type": "text"
+								},
+								{
+									"key": "salary",
+									"value": "120000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://dev.esqify.com/mobile_api/post_job.php",
+							"protocol": "https",
+							"host": [
+								"dev",
+								"esqify",
+								"com"
+							],
+							"path": [
+								"mobile_api",
+								"post_job.php"
+							]
+						},
+						"description": "Create a new job posting"
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "https://dev.esqify.com/mobile_api",
+			"type": "string"
+		}
+	]
+}
